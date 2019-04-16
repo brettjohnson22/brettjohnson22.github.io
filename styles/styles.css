@@ -1,0 +1,182 @@
+body {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	background-color: mintcream;
+}
+
+.page-id-contact {
+	background-image: url(../images/email2.png);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 75%;
+    
+}
+
+a:link{
+	color: cyan;
+}
+
+a:visted{
+	color: darkcyan;
+}
+
+a.logolink:link {
+	color: cyan
+	textdecoration:none;
+}
+
+a.logolink:visited {
+	color: cyan
+	textdecoration:none;
+}
+
+div.topbar {
+	display: block;
+	margin: 0;
+	padding-right: 30px;
+	height: 75px;
+	background-color: lightskyblue;
+	text-align: right;
+	overflow: hidden;
+	position: relative;
+}
+
+.nameClass {
+	font-size: 50px;
+	line-height: 0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: lighter;
+}
+
+ul.sidebar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  background-color: navy;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  text-transform: uppercase
+}
+
+div.mainwindow {
+	margin: 100px 16px 1px;
+	overflow: auto;
+}
+
+
+li{
+	float: left;
+}
+
+li a.active {
+	color: black;
+	background-color: mediumturquoise;
+}
+
+li a:hover:not(.active){
+	color: black;
+	background-color: turquoise;
+}
+
+li a{
+  	color: mediumturquoise;
+ 	font-size: 20px;
+ 	text-decoration: none;
+ 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#projecttable {
+	width: 50%;
+	margin: 0 25%;
+	border-collapse: collapse;
+	border:2px solid #000000;
+}
+
+#projecttable td, #projecttable th {
+	border:2px solid #000000;
+}
+
+
+
+#projecttable td {
+	color: midnightblue;
+	text-align: center;
+	font-size: 20px;
+}
+
+#projecttable tr{
+	background-color: powderblue;
+}
+
+#projecttable tr:hover {
+	background-color: mediumaquamarine;
+}
+
+#projecttable th {
+	background-color: aqua;
+	color: green;
+	font-size: 25px;
+	text-align: center;
+}
+
+.boldClass{
+	font-weight: lighter;
+	font-size: 30px;
+	color: black;
+}
+
+.headerClass{
+	font-weight: bold;
+	font-size: 40px;
+	color: aliceblue;
+}
+
+.bodyClass{
+	font-size: 24px;
+	color: darkslategrey;
+	padding: 0 50px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+
+}
+
+.contactbody {
+	font-size: 24px;
+	color: darkslategrey;
+	padding: 0;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+
+}
+
+.bsname{
+	color: midnightblue;
+	text-align: right;
+	padding-right: 35px;
+	overflow: hidden;
+	font-size: 50px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	font-size: 10px;
+	color: lightsteelblue;
+	text-align: right;
+}
+
+.fixrightpad {
+	padding-right: 0px;
+}
+
+.row {
+	margin:0 0;
+}
