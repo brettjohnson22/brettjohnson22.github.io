@@ -3,30 +3,29 @@ body {
 	background-color: mintcream;
 }
 
-.page-id-contact {
-	background-image: url(../images/email2.png);
-	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 75%;
-    
-}
-
-a:link{
-	color: cyan;
-}
-
-a:visted{
+a:link {
 	color: darkcyan;
 }
 
+a:visited {
+	color: midnightblue;
+}
+
 a.logolink:link {
-	color: cyan
-	textdecoration:none;
+	color: white;
+	text-decoration: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 a.logolink:visited {
-	color: cyan
-	textdecoration:none;
+	color: white;
+	text-decoration: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+nav + a:visted{
+	color: cyan;
+	text-decoration: none;
 }
 
 div.topbar {
@@ -40,11 +39,9 @@ div.topbar {
 	position: relative;
 }
 
-.nameClass {
-	font-size: 50px;
-	line-height: 0;
-	font-family: Verdana, Geneva, sans-serif;
-	font-weight: lighter;
+div.mainwindow {
+	margin: 75px 16px 1px;
+	overflow: auto;
 }
 
 ul.sidebar {
@@ -56,22 +53,7 @@ ul.sidebar {
   width: 100%;
   height: 50px;
   overflow: hidden;
-  text-transform: uppercase
-}
-
-div.mainwindow {
-	margin: 100px 16px 1px;
-	overflow: auto;
-}
-
-
-li{
-	float: left;
-}
-
-li a.active {
-	color: black;
-	background-color: mediumturquoise;
+  text-transform: uppercase;
 }
 
 li a:hover:not(.active){
@@ -79,11 +61,29 @@ li a:hover:not(.active){
 	background-color: turquoise;
 }
 
-li a{
+li a.navclass {
   	color: mediumturquoise;
  	font-size: 20px;
  	text-decoration: none;
  	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+li a.active {
+	color: black;
+	background-color: mediumturquoise;
+}
+
+li a.res:link {
+	color: darkcyan;
+}
+
+li a.res:visited {
+	color: midnightblue;
+}
+
+li a.res:hover {
+	color: midnightblue;
+	background-color: mintcream;
 }
 
 #projecttable {
@@ -97,15 +97,13 @@ li a{
 	border:2px solid #000000;
 }
 
-
-
 #projecttable td {
 	color: midnightblue;
 	text-align: center;
 	font-size: 20px;
 }
 
-#projecttable tr{
+#projecttable tr {
 	background-color: powderblue;
 }
 
@@ -120,10 +118,18 @@ li a{
 	text-align: center;
 }
 
+.nameClass {
+	font-size: 50px;
+	line-height: 0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: lighter;
+}
+
 .boldClass{
 	font-weight: lighter;
 	font-size: 30px;
 	color: black;
+	text-align: center;
 }
 
 .headerClass{
@@ -136,16 +142,31 @@ li a{
 	font-size: 24px;
 	color: darkslategrey;
 	padding: 0 50px;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; 
+	text-align: justify;
+}
 
+.aboutbody{
+	font-size: 24px;
+	color: darkslategrey;
+	padding: 0;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; 
+	text-align: justify;
 }
 
 .contactbody {
 	font-size: 24px;
 	color: darkslategrey;
 	padding: 0;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	text-align: justify;
+}
 
+.page-id-contact {
+	background-image: url(../images/email2.png);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 75%; 
 }
 
 .bsname{
@@ -158,8 +179,10 @@ li a{
 }
 
 .responsive {
+	height: 100%;
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  object-fit: contain
 }
 
 .footer {
@@ -173,10 +196,6 @@ li a{
 	text-align: right;
 }
 
-.fixrightpad {
-	padding-right: 0px;
-}
-
 .row {
-	margin:0 0;
+	margin:0 0; /* needed to prevent horizontal scroll*/
 }
