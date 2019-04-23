@@ -1,6 +1,6 @@
 let roundArray = [4, 6, 8, 10, 20, 50];
-let lavaArray = [4, 6, 8, 10, 14, 16, 18, 20, 24, 26, 28, 30, 34, 36, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
-let doubleArray = [3, 5, 13, 15, 23, 25, 33, 35];
+let lavaArray = ["0"];
+let doubleArray = ["3", "5"];
 let roundNumber = 0;
 let currentScore = 0;
 let highScore = 0;
@@ -54,22 +54,26 @@ function startGame(){
 		alert("Game Over. Final Score: " + currentScore + ". Today's High Score: " + highScore + ". Try again?");
 		currentScore = 0;
 		normalBackground();
+		lavaArray = ["0"];
 		break;
 		}
 	}
 }
 
 function scoreRound(){
+	populateLavaArray();
 	let diceResult = diceRoll(roundArray[roundNumber]);
 	let resultString = diceResult.toString();
 	let resultArray = resultString.split("");
-	if (lavaArray.includes(diceResult)){
+	let judgedValue = (resultArray[resultArray.length - 1])
+	if (resultArray.includes("4")){
+		judgedValue = "4";
+	}
+	if (lavaArray.includes(judgedValue)){
 		alert("You rolled a " + diceResult +". You're in the Lava! You Lose! Better luck next time!");
 		roundNumber = 6;
-		return roundNumber;
-		return currentScore;
 	}
-	else if (doubleArray.includes(diceResult)){
+	else if (doubleArray.includes(judgedValue)){
 		currentScore++;
 		currentScore += currentScore;
 		alert("You rolled a " + diceResult +", that was close! Your fancy footwork has narrowly avoided the lava! Double Points! New score is " + currentScore + ".");
@@ -78,7 +82,28 @@ function scoreRound(){
 		currentScore++;
 		alert("You rolled a " + diceResult +". You're safe for now! New Score is " + currentScore + ".");
 	}
-	return currentScore;
+
+}
+
+function populateLavaArray(){
+	let increasedLavaFlow = roundArray[roundNumber].toString()
+	lavaArray.push(increasedLavaFlow);
+//		for (i = 0; i <= roundArray[roundNumber]; i++) {
+//		let lavaCheckerString = i.toString();
+//		let lavaCheckerArray = lavaCheckerString.split("");
+//		if (lavaCheckerArray.length > 1){
+//			if (magicLavaNumbers.includes(lavaCheckerArray[lavaCheckerArray.length - 1])){
+//				lavaArrayTester.push(i);
+//			}
+//			else if(i == roundArray[roundNumber]){
+//				lavaArrayTester.push(i);
+//			}
+//		}
+//	}
+}
+
+
+function populateDoubleArray(){
 }
 
 function lavaBackground(){
@@ -88,5 +113,3 @@ function lavaBackground(){
 function normalBackground(){
 	document.body.style.backgroundImage = "url('start.png')";
 }
-//Goals: simplify arrays
-//Lava array = [4]
