@@ -1,0 +1,29 @@
+body.main {
+color: #FFFF00;
+background-image: url("lava2.jpg");
+background-repeat: no-repeat;
+background-position: center bottom;
+background-size: cover;
+}
+.center{
+	text-align: center;
+}
+
+.backlit{
+	background-color: #000000;
+	border-style: groove;
+	border-color: #FF0000;
+
+}
+
+.lava {
+  background-color: #8B0000;
+  border-style: groove;
+  border-color: #000000;
+  color: #FFFF00;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

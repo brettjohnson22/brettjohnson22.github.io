@@ -29,7 +29,7 @@ function startGame(){
 		scoreRound(roundArray[roundNumber]);
 		break;
 		case 3:
-		alert("Rolling d10. All Factors of Ten are Lava! Is there any escape?");
+		alert("Rolling d10. All zeroes are now Lava! Is there any escape?");
 		scoreRound(roundArray[roundNumber]);
 		break;
 		case 4:
@@ -41,14 +41,16 @@ function startGame(){
 		scoreRound(roundArray[roundNumber]);
 		break;
 		case 6:
-		alert("You escaped the lava, great job! Final Score is " + currentScore + ".");
+		currentScore += 5;
+		alert("You escaped the lava, great job! Bonus Points! Final Score is " + currentScore + ".");
 		break;
 		case 7:
 		if (currentScore > highScore){
 		alert("New High Score!");
 		highScore = currentScore;
+		document.getElementById("printedScore").innerHTML = highScore;
 		}
-		alert("Game Over. Final Score is " + currentScore + ". Today's High Score: " + highScore + ". Try again?");
+		alert("Game Over. Final Score: " + currentScore + ". Today's High Score: " + highScore + ". Try again?");
 		currentScore = 0;
 		break;
 		}
@@ -76,4 +78,4 @@ function scoreRound(){
 	return currentScore;
 }
 
-//Goals: High Score tracker, better HTML,  simplify arrays
+//Goals: simplify arrays

@@ -1,13 +1,50 @@
 <!DOCTYPE = html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
 <html>
-	<body>
+	<body class="main">
+		<div class="container-fluid">
 		<br>
-		<center><h1>THE FOUR IS LAVA</h1></center>
 		<br>
-		<center><h4>In this game, you will make a series of dice rolls. At the start of the game, the number 4 is lava, but with each progessive roll, the lava expands. Lava is bad, you should avoid it. But if you roll a number adjacsent to a 4, you double your points. Can you make it to the end?</h4></center>
-		<center><button style="background-color:red" onclick="startGame()">LAVA!</button></center>
+		<div class="row">
+			<div class="col-4">
+			</div>
+			<div class="col-4">
+			<h1 class="center">THE FOUR IS LAVA</h1>
+			</div>
+			<div class="col-4">
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-3">
+			</div>
+			<div class="col-6 center">
+				<h4 class="backlit">In this game, you will make a series of dice rolls. At the start of the game, the number 4 is lava, but with each progessive roll, the lava expands. Lava is bad, you should avoid it. But if you roll a number adjacent to a 4, you double your points. Can you make it to the end and escape the lava?</h4>
+			</div>
+			<div class="col-3"></div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-5">
+			</div>
+			<div class="col-2 center">
+				<h6 class="backlit">Today's High Score: <span id="printedScore"></span></h6>
+				<br>
+				<button class ="lava center" onclick="startGame()">START THE LAVA!</button>
+			</div>
+			<div class="col-5">
+			</div>
+		</div>
+	</div>
 	</body>
 </html>
 
-<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
 <script src="dicegame.js"></script>
