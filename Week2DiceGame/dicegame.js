@@ -14,6 +14,7 @@ let diceRoll = function(numberOfSides){
 }
 
 function startGame(){
+	lavaBackground();
 	for(roundNumber = 0; roundNumber <= 7; roundNumber++){
 		switch(roundNumber){
 		case 0:
@@ -52,6 +53,7 @@ function startGame(){
 		}
 		alert("Game Over. Final Score: " + currentScore + ". Today's High Score: " + highScore + ". Try again?");
 		currentScore = 0;
+		normalBackground();
 		break;
 		}
 	}
@@ -59,7 +61,8 @@ function startGame(){
 
 function scoreRound(){
 	let diceResult = diceRoll(roundArray[roundNumber]);
-	diceResult.toString();
+	let resultString = diceResult.toString();
+	let resultArray = resultString.split("");
 	if (lavaArray.includes(diceResult)){
 		alert("You rolled a " + diceResult +". You're in the Lava! You Lose! Better luck next time!");
 		roundNumber = 6;
@@ -78,4 +81,12 @@ function scoreRound(){
 	return currentScore;
 }
 
+function lavaBackground(){
+	document.body.style.backgroundImage = "url('lava.jpg')";
+}
+
+function normalBackground(){
+	document.body.style.backgroundImage = "url('start.png')";
+}
 //Goals: simplify arrays
+//Lava array = [4]

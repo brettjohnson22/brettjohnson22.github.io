@@ -1,10 +1,16 @@
 body.main {
 color: #FFFF00;
-background-image: url("lava2.jpg");
+background-image: url("start.png");
 background-repeat: no-repeat;
 background-position: center bottom;
 background-size: cover;
+overflow-x: hidden;
 }
+
+.forceBackground {
+	background-image: url("lava.jpg");
+}
+
 .center{
 	text-align: center;
 }
@@ -13,7 +19,6 @@ background-size: cover;
 	background-color: #000000;
 	border-style: groove;
 	border-color: #FF0000;
-
 }
 
 .lava {
@@ -26,4 +31,8 @@ background-size: cover;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.fixPad {
+	margin-right: 0px;
 }
