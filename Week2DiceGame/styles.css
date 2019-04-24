@@ -11,6 +11,10 @@ overflow-x: hidden;
 	background-image: url("lava.jpg");
 }
 
+.pageTitle{
+	color: #FFA500;
+}
+
 .center{
 	text-align: center;
 }
