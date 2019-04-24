@@ -1,10 +1,11 @@
 let roundArray = [4, 6, 8, 10, 20, 50];
-let lavaArray = [];
 let doubleArray = ["3", "5"];
 let easterEggArray = ["8", "11", "18", "39", "44"];
+let highScore = 0;
+let lavaArray = [];
 let roundNumber = 0;
 let currentScore = 0;
-let highScore = 0;
+
 
 let diceRoll = function(numberOfSides){
 	arrayOfSides = [];
@@ -18,11 +19,11 @@ let diceRoll = function(numberOfSides){
 changeButtonText("START THE LAVA!");
 
 function startGame(){
-	lavaBackground();
 	while(roundNumber <= 7){
 		switch(roundNumber){
 		case 0:
 		changeText("Rolling d4. Careful, the Four is Lava!");
+		lavaBackground();
 		changeButtonText("OK");
 		rollRound()
 		return roundNumber; //Needed to break loop
@@ -49,16 +50,10 @@ function startGame(){
 		case 6:
 		currentScore += 5;
 		changeText("You escaped the lava, great job! Bonus Points! Final Score is " + currentScore + ".");
-		gameOverButton();
-		roundNumber = 8;
+		roundNumber = 7;
+		return roundNumber;
 		case 7:
-		if (currentScore > highScore){
-		changeText("New High Score!");
-		highScore = currentScore;
-		document.getElementById("printedScore").innerHTML = highScore;
-		}
-		changeText("Game Over. Final Score: " + currentScore + ". Today's High Score: " + highScore + ". Try again?");
-		gameOverButton();
+		gameOver();
 		roundNumber++;
 		}
 	}
@@ -74,6 +69,7 @@ function scoreRound(){
 		currentScore++;
 		currentScore = currentScore * 3;
 		changeText("You rolled an " + diceResult + ". Lucky you, you found the Easter Egg! I had to code a whole new branch to say 'an " + diceResult + "' instead of 'a " + diceResult + "'. Triple points!! New Score is " + currentScore + ".");
+		roundNumber++;
 		break;
 		case "4":
 		changeText("You rolled a " + diceResult + ". Really? How much more 'Four' can you get? You take a running start, then leap into the air and swan dive into the Lava with a stunning grace. It's breathtaking, really. I mean, you're still dead. But wow.");
@@ -87,6 +83,7 @@ function scoreRound(){
 		changeText("It's starting to get to you, all the running and jumping, hopping from rock to rock over the lava, dodging rising pillars of smoke and cascading liquid rock. But you're getting so close, you feel the end is in sight. Then, like the Road Runner, you stop on a dime mere centimeters from the edge of a precipice and see the giant boiling hellscape stretching out before you. Fours. Fours, as far as the eye can see. You stumble back as an explosion rocks you from below, knocking you to the ground. So hot. So hopeless. It would be so easy to just give up, to just lay here and let the heat overtake you. Just then, at your darkest moment, you hear a faint sound rising over the din of the world falling apart. You sit up and cough, shielding your eyes from the dust and searching for the sound. You see the helicopter descending through the clouds, and it's heading your way. You jump to your feet and wave your arms, desperately trying to get the pilot's attention. When it nears, a ladder drops down and you grab on for dear life as it lifts you away from the heat. The pilot calls down to you, but you can't hear her over the spinning blades and exploding rocks. So you climb. Hand over hand, rung over rung. Finally you get to cabin and collapse on the floor. With ragged breaths, you call out to the pilot, 'What did you say?'. She yells back, 'I said, you rolled a " + diceResult + "! Cutting it pretty close, aren't you? Triple Points!'");
 			currentScore++;
 			currentScore = currentScore * 3;
+			roundNumber++;
 		break;
 		}
 	}
@@ -147,6 +144,18 @@ function showButton(){
 	buttonShower.style.display = "inline-block";
 }
 
+function gameOver(){
+	if (currentScore > highScore){
+	highScore = currentScore;
+	changeText("Game Over. Final Score: " + highScore + ". New High Score! Try again?");
+	document.getElementById("printedScore").innerHTML = highScore;
+	}
+	else {
+	changeText("Game Over. Final Score: " + currentScore + ". High Score: " + highScore + ". Try again?");
+	}
+	gameOverButton();
+}
+
 function gameOverButton(){
 	let buttonChanger = document.getElementById("mainButton");
 	buttonChanger.onclick = function() { resetGame() };
@@ -167,7 +176,7 @@ function changeButtonText(newButtonText){
 function resetGame(){
 	currentScore = 0;
 	roundNumber = 0;
-	lavaArray = ["0"];
+	lavaArray = [];
 	changeText("In this game, you will make a series of dice rolls. At the start of the game, the number 4 is Lava, and with each progessive roll, the Lava expands and takes over new numbers. Lava is bad, you should avoid it. But if you roll a number adjacent to a 4, you double your points. Can you make it to the end and escape the lava?");
 	normalBackground();
 	resetButton();
