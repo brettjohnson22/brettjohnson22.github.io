@@ -25,20 +25,20 @@
 			<div class="row">
 				<div class="col-2">
 				</div>
-				<div class="col-8 center">
-					<h4 id ="gameText" class="backlit">In this game, you will make a series of dice rolls. At the start of the game, the number 4 is Lava, and with each progessive roll, the Lava expands and takes over new numbers. Lava is bad, you should avoid it. But if you roll a number adjacent to a 4, you double your points. Can you make it to the end and escape the lava?</h4>
+				<div class="col-8 center bigBox backlit">
+					<h4 class ="center" id ="gameText">In this game, you will make a series of dice rolls. At the start of the game, the number 4 is Lava, and with each progessive roll, the Lava expands and takes over new numbers. Lava is bad, you should avoid it. But if you roll a number adjacent to a 4, you double your points. Can you make it to the end and escape the lava?</h4>
 				</div>
 				<div class="col-2"></div>
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-5">
+				<div class="col-4">
 				</div>
-				<div class="col-2 center">
-					<h6 class="backlit">High Score: <span id="printedScore"></span></h6>
+				<div class="col-4 center">
+					<h6 id="scoreTracker" class="backlit highScore">High Score: <span id="printedScore"></span></h6>
 				</div>
-				<div class="col-5">
+				<div class="col-4">
 				</div>
 			</div>
 			<div class="row">
@@ -46,7 +46,7 @@
 				</div>
 				<div class="col-4 center">
 					<br>
-					<button class ="lava center" id="mainButton" onclick="startGame()"><span id="buttonText"></button>
+					<button class ="lavaButton center" id="mainButton" onclick="beginGame()"><span id="buttonText">START THE LAVA!</button>
 					<br>
 				</div>
 				<div class="col-4">

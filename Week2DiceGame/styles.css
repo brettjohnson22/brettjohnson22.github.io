@@ -1,14 +1,10 @@
 body.main {
 color: #FFFF00;
-background-image: url("start.png");
+background-image: url("images/start.png");
 background-repeat: no-repeat;
 background-position: center bottom;
 background-size: cover;
-overflow-x: hidden;
-}
-
-.forceBackground {
-	background-image: url("lava.jpg");
+overflow: hidden;
 }
 
 .pageTitle{
@@ -19,24 +15,50 @@ overflow-x: hidden;
 	text-align: center;
 }
 
+.bigBox{
+	height: 200px;
+	line-height: 1.5;
+  	display: inline-block;
+  	vertical-align: middle;
+  	overflow: auto;
+  	padding-top: 20px;
+}
+
 .backlit{
 	background-color: #000000;
 	border-style: groove;
 	border-color: #FF0000;
 }
 
-.lava {
-  background-color: #8B0000;
-  border-style: groove;
-  border-color: #000000;
-  color: #FFFF00;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+.highScore{
+	background-color: #000000;
+ 	border-style: groove;
+ 	border-color: #8B0000;
+ 	color: #FFFF00;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.lavaButton {
+ 	background-color: #8B0000;
+ 	border-style: groove;
+ 	border-color: #000000;
+ 	color: #FFFF00;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
 
 .fixPad {
 	margin-right: 0px;
+}
+
+.verticalCenter {
+  display: flex;
+  align-items: center;
 }
